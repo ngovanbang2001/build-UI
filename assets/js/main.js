@@ -37,7 +37,7 @@ function Validator(options) {
 
             e.preventDefault();
             var isFormValid = true;
-            console.log(selectoRules)
+            
             options.rules.forEach((rule) => {
                 var inputElement = formElement.querySelector(rule.selector)
                
@@ -91,11 +91,8 @@ function Validator(options) {
             }
             //form sai
             else{
-                console.log("Có lỗi")
+                console.error("Vui lòng hoàn thành các trường")
             }
-           
-           
-
         }
         options.rules.forEach((rule) => {
 

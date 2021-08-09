@@ -83,7 +83,7 @@
         Validator.isRequired('#email'),
         Validator.isEmail('#email'),
         Validator.isPassword('#password', 6),
-        Validator.isRequired('#province'),
+        Validator.isRequired('#province','Vui lòng chọn trường này '),
         Validator.isRequired('input[name="gender"]', 'Vui lòng chọn trường này '),
         Validator.isConfirmPasssword('#password_confirmation', function () { return document.querySelector('#password').value }),
         Validator.isRequired('#password_confirmation'),
