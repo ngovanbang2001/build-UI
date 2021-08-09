@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,28 @@
   <title>Document</title>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
   <div class="main">
 
     <form action="" method="POST" class="form" id="form-1">
       <h3 class="heading">Thành viên đăng ký</h3>
       <p class="desc">Chào mừng đến với Canfire ❤️</p>
-  
+
       <div class="spacer"></div>
-  
+
       <div class="form-group">
         <label for="fullname" class="form-label">Tên đầy đủ</label>
         <input id="fullname" name="fullname" type="text" placeholder="VD: Bằng Ngô" class="form-control">
         <span class="form-message"></span>
       </div>
-  
+
       <div class="form-group">
         <label for="email" class="form-label">Email</label>
         <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
         <span class="form-message"></span>
       </div>
-  
+
       <div class="form-group">
         <label for="password" class="form-label">Mật khẩu</label>
         <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
@@ -35,62 +37,64 @@
       </div>
       <div class="form-group">
         <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
-        <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+        <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password"
+          class="form-control">
         <span class="form-message"></span>
       </div>
       <div class="form-group checkpass">
-        <input type="checkbox" class="form-checkbox" id="form-checkbox" >
+        <input type="checkbox" class="form-checkbox" id="form-checkbox">
         <label for="form-checkbox">Hiện mật khẩu</label>
       </div>
       <div class="form-group">
         <label for="province" class="form-label">Tỉnh/TP</label>
-       <select name="province" id="province"  value="---Chọn tỉnh thành----">
-        <option >---Chọn Tỉnh/TP---</option>
-         <option value="hni">Hà Nội</option>
-         <option value="hyn">Hưng Yên</option>
-         <option value="hnm">Hà Nam</option>
-       </select>
+        <select name="province" id="province" value="---Chọn tỉnh thành----">
+          <option value="">---Chọn Tỉnh/TP---</option>
+          <option value="hni">Hà Nội</option>
+          <option value="hyn">Hưng Yên</option>
+          <option value="hnm">Hà Nam</option>
+        </select>
         <span class="form-message"></span>
       </div>
       <div class="form-group">
         <label for="gender" class="form-label">Giới tính</label>
-        <input  name="gender"  value="male" type="checkbox" class="form-control">Nam
-        <input  name="gender" value="female"  type="checkbox" class="form-control">Nữ
-        <input  name="gender"  value="other" type="checkbox" class="form-control">Khác
+        <input name="gender" value="male" type="checkbox" class="form-control">Nam
+        <input name="gender" value="female" type="checkbox" class="form-control">Nữ
+        <input name="gender" value="other" type="checkbox" class="form-control">Khác
         <span class="form-message"></span>
       </div>
       <div class="form-group">
         <label for="avatar" class="form-label">Ảnh đại diện</label>
-        <input id="avatar"  name="avatar"   type="file" class="form-control">
+        <input id="avatar" name="avatar" type="file" class="form-control">
         <span class="form-message"></span>
       </div>
       <button class="form-submit">Đăng ký</button>
     </form>
-  
+
   </div>
   <script src="./assets/js/main.js"></script>
   <script>
     Validator({
-      form:'#form-1',
-      formGroup:'.form-group',
-      formMessage:'.form-message',
-      formCheckPass:'#form-checkbox',
-      rules:[
+      form: '#form-1',
+      formGroup: '.form-group',
+      formMessage: '.form-message',
+      formCheckPass: '#form-checkbox',
+      rules: [
         Validator.isRequired('#fullname'),
         Validator.isRequired('#email'),
         Validator.isEmail('#email'),
-        Validator.isPassword('#password',6),
+        Validator.isPassword('#password', 6),
         Validator.isRequired('#province'),
-        Validator.isRequired('input[name="gender"]','Vui lòng chọn trường này '),
-         Validator.isConfirmPasssword('#password_confirmation',function(){return document.querySelector('#password').value}),
-         Validator.isRequired('#password_confirmation'),
-         Validator.isRequired('#avatar','Vui lòng chọn ảnh '),
-        ],
-        onSubmit:function(data){
-            console.log(data)
-        }
+        Validator.isRequired('input[name="gender"]', 'Vui lòng chọn trường này '),
+        Validator.isConfirmPasssword('#password_confirmation', function () { return document.querySelector('#password').value }),
+        Validator.isRequired('#password_confirmation'),
+        Validator.isRequired('#avatar', 'Vui lòng chọn ảnh '),
+      ],
+      onSubmit: function (data) {
+        console.log(data)
+      }
     })
-     </script>
-      
+  </script>
+
 </body>
+
 </html>

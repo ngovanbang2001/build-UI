@@ -10,6 +10,7 @@ function Validator(options) {
         for (var i = 0; i < rules.length; i++) {
 
             switch (inputElement.type) {
+                
                 case 'checkbox':
                     var input = formElement.querySelector(rule.selector + ":checked");
                           errorMessage = rules[i](input ? input.value : '')
@@ -21,7 +22,6 @@ function Validator(options) {
                     break;
                 default:
                     errorMessage = rules[i](inputElement.value);
-                    
                     } 
               if (errorMessage) break;
          
@@ -40,6 +40,7 @@ function Validator(options) {
             console.log(selectoRules)
             options.rules.forEach((rule) => {
                 var inputElement = formElement.querySelector(rule.selector)
+               
                 var errorElement = inputElement.closest(options.formGroup).querySelector(options.formMessage);
               var isValid= Validate(rule, inputElement, errorElement);
                 //Có lỗi trong validate nên isValid=true
@@ -109,8 +110,9 @@ function Validator(options) {
             }
 
             var inputElements = formElement.querySelectorAll(rule.selector);
-
+            
             Array.from(inputElements).forEach((inputElement) => {
+               
                 var errorElement = inputElement.closest(options.formGroup).querySelector(options.formMessage)
                 if (inputElement) {
                     inputElement.onblur = () => {
