@@ -13,7 +13,6 @@ export function createStore(reducer) { // Ham này tạo ra dữ liệu trong st
 
     function render() { // render ra view
         for (const [root, component] of roots) {
-            console.log(component)
             const output = component()
             root.innerHTML = output
         }
@@ -22,7 +21,7 @@ export function createStore(reducer) { // Ham này tạo ra dữ liệu trong st
     return {
         // Hàm này nhận mấy cái dòng HTML của component để hiển thị ra view
         attach(component, root) {
-            roots.set(root, component) // doi voi obj thuong thi gan luon, nhung voi Map thi dung phuon thuc set
+            roots.set(root, component)
             render()
         },
 
